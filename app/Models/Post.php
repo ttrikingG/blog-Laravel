@@ -19,4 +19,14 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public static function search($search)
+    {
+        $search = "%$search%";
+        return self::where('title', 'like', $search)
+                    ->orWhere('content', 'like', $search)
+                    ->with(['user', 'comments'])
+                    ->paginate(12);
+    }
 }
+

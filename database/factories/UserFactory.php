@@ -33,7 +33,7 @@ class UserFactory extends Factory
             // 'thumb' => $thumbUrl,   // opção URL fake
             'thumb' => $thumbPath,    // opção arquivo real
             
-            'password'  => bcrypt('password'),
+            'password'  => bcrypt('123'),
         ];
     }
 

@@ -1,28 +1,42 @@
 <div class="container-fluid">
-  <!-- Navbar brand -->
+  <!-- Navbar toggler -->
   <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
     aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fas fa-bars"></i>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarExample01">
+    <!-- Links principais -->
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" aria-current="page" href="{{ route('home')}}">Home</a>
+        <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" rel="nofollow"
-          target="_blank">Posts</a>
+        <a class="nav-link" href="{{route('posts')}}" rel="nofollow" >Posts</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" target="_blank">Login</a>
-      </li>
+
+      <!-- Mostra nome se logado, senão mostra login -->
+      @auth
+        <li class="nav-item">
+          <span class="nav-link">Olá, {{ Auth::user()->fullName }}!</span>
+        </li>
+        <li class="nav-item">
+          <form action="{{ route('logout') }}" method="POST" class="d-inline">
+            @csrf
+              <button class="btn btn-link text-danger p-0" type="submit">Sair</button>
+          </form>
+        </li>
+      @else
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('login') }}">Login</a>
+        </li>
+      @endauth
     </ul>
 
+    <!-- Links sociais -->
     <ul class="navbar-nav d-flex flex-row">
-      <!-- Icons -->
       <li class="nav-item me-3 me-lg-0">
-        <a class="nav-link" href="https://www.linkedin.com/in/hailtom-g-dias-66909a265/" rel="nofollow"
-          target="_blank">
+        <a class="nav-link" href="https://www.linkedin.com/in/hailtom-g-dias-66909a265/" rel="nofollow" target="_blank">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>

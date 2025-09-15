@@ -3,7 +3,7 @@
 @section('jumbotron')
 <div class="d-flex justify-content-center mb-5">
     <form action="{{route('home')}}" method="GET" class="input-group" style="max-width: 600px; width: 100%;">
-        @csrf 
+        
         <input 
             type="search" 
             name="s" 
@@ -24,7 +24,7 @@
 <!--Section: Content-->
 <section class="text-center ">
     <div class="container">
-        <h4 class="mb-5"><strong>Latest posts</strong></h4>
+        <h4 class="mb-5"><strong>Posts</strong></h4>
 
         @forelse ($posts as $post)
             @if ($loop->first)
@@ -69,14 +69,12 @@
             </div>
         @endforelse
     </div>
-
-    @if(request()->input('s'))
-        <div class="d-flex justify-content-center mt-4">
-            {{ $posts->appends(['s' => request()->input('s')])
-                    ->links('pagination::bootstrap-5') }}
-        </div>
-    @endif
-
 </section>
 <!--Section: Content-->
+
+<!-- Pagination -->
+<div class="d-flex justify-content-center my-4">
+    {{ $posts->links('pagination::bootstrap-5') }}
+</div>
+
 @endsection
