@@ -28,18 +28,19 @@ Um blog moderno desenvolvido em PHP e Laravel, com funcionalidades de posts, com
 git clone https://github.com/usuario/nome-do-repositorio.git
 ``` 
 
-2.Entre na pasta do projeto:
+2. Entre na pasta do projeto:
 ```bash
 cd nome-do-repositorio
 ``` 
 
 
-Instale as dependências do Laravel:
+3. Instale as dependências do Laravel:
 ```bash
 composer install
+``` 
 
 
-Configure o .env (banco de dados, e-mail, etc.):
+4. Configure o .env (banco de dados, e-mail, etc.):
 
 APP_NAME="Meu Blog"
 DB_DATABASE=nome_do_banco
@@ -53,16 +54,19 @@ MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
 
 
-Gere a chave do Laravel:
+5. Gere a chave do Laravel:
 ```bash
 php artisan key:generate
+``` 
 
 
-Rode as migrations:
+6. Rode as migrations:
 ```bash
 php artisan migrate
+``` 
 
 
-Inicie o servidor:
+7. Inicie o servidor:
 ```bash
 php artisan serve
+``` 
