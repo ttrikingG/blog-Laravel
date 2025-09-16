@@ -27,7 +27,7 @@ Um blog moderno desenvolvido em PHP e Laravel, com funcionalidades de posts, com
 ```bash
 git clone https://github.com/usuario/nome-do-repositorio.git
 
-Entre na pasta do projeto:
+## Entre na pasta do projeto:
 ```bash
 cd nome-do-repositorio
 
