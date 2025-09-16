@@ -28,12 +28,12 @@ Um blog moderno desenvolvido em PHP e Laravel, com funcionalidades de posts, com
 git clone https://github.com/usuario/nome-do-repositorio.git
 
 Entre na pasta do projeto:
-
+```bash
 cd nome-do-repositorio
 
 
 Instale as dependências do Laravel:
-
+```bash
 composer install
 
 
@@ -52,15 +52,15 @@ MAIL_ENCRYPTION=null
 
 
 Gere a chave do Laravel:
-
+```bash
 php artisan key:generate
 
 
 Rode as migrations:
-
+```bash
 php artisan migrate
 
 
 Inicie o servidor:
-
+```bash
 php artisan serve
