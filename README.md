@@ -25,11 +25,13 @@ Um blog moderno desenvolvido em PHP e Laravel, com funcionalidades de posts, com
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/usuario/nome-do-repositorio.git``
+git clone https://github.com/usuario/nome-do-repositorio.git
+``` 
 
 2.Entre na pasta do projeto:
 ```bash
-cd nome-do-repositorio``
+cd nome-do-repositorio
+``` 
 
 
 Instale as dependências do Laravel:
