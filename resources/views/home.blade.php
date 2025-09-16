@@ -24,7 +24,16 @@
 <!--Section: Content-->
 <section class="text-center ">
     <div class="container">
-        <h4 class="mb-5"><strong>Latest posts</strong></h4>
+
+        @if(request()->input('s'))
+            <h4 class="mb-5">
+                <strong>Search results for "{{ request()->input('s') }} ({{$posts->total()}})"</strong>
+            </h4>
+            
+        @else
+            <h4 class="mb-5"><strong>Latest posts</strong></h4>
+            
+        @endif
 
         @forelse ($posts as $post)
             @if ($loop->first)
